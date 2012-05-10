@@ -1,9 +1,14 @@
 html {
 	font-family: Arial;
-	font-size: 1em;
+	font-size: 0.75em;
 	-webkit-text-size-adjust: none; /* Prevent font scaling in landscape */
 }
 
+body {
+	line-height: 1.5em;
+}
+
 h1 {
-	font-size: 3em;
+	font-size: #{36 / $em}em;
+	line-height: 1.5em;
 }

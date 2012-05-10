@@ -30,5 +30,5 @@ end
 # Slim::Engine.set_default_options :sections => true
 
 get '/' do
-  erb :index
+  erb :login
 end
