@@ -5,4 +5,4 @@ Included in this repo is a boilerplate set up for a Sinatra app and a single vie
 Also included is an experimental set up for UI break points.  
 Warning: this repo is using the alpha Sass gem ``3.2.0.alpha.104``
 
-See example: (http://login-boilerplate.herokuapp.com/)[http://login-boilerplate.herokuapp.com/]
+See example: [http://login-boilerplate.herokuapp.com/](http://login-boilerplate.herokuapp.com/)
