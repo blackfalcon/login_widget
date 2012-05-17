@@ -1,34 +1,53 @@
 html {
-	background: #313131;
-	@media #{$mobile} {
-		background: white;
-	}
+
 }
 
 .main_body {
-	background: white;
 	@extend %clearfix;
 }
 
 .site_header {
 	width: 100%;
-	height: 6rem;
-	color: white;
+	margin: 0 auto #{20 / $em}rem auto;
 	@extend %clearfix;
-	@extend %mobile_hide;
+	border-bottom: 1px solid #cccccc;
+	@media #{$mobile} {
+		width: 100%;
+	}
 }
 
-.site_footer {
-	color: white;
-	@extend %clearfix;
-	@extend %mobile_hide;
+.site_logo {
+	width: #{620 / $em}rem;
+	margin: 0 auto;
+	background-image: $gi_logo_med_black;
+	background-repeat: no-repeat;
+	background-position: 0 50%;
+	height: 7rem;
+	@media #{$mobile} {
+		background-position: 50% 50%;
+		width: 100%;
+	}
+}
+
+.legal_footer {
+	border-top: 1px solid #cccccc;
+	margin-top: 20px;
+	width: 100%;
+	padding-top: #{20 / $em}rem;
+	.content {
+		width: #{620 / $em}rem;
+		margin: 0 auto; 
+		@media #{$mobile} {
+			width: 90%;
+			margin: 0 5%;
+		}
+	}
 }
 
 .login_container {
 	@extend %clearfix;
 	width: #{620 / $em}rem;
 	margin: 0 auto;
-	padding: #{100 / $em}rem #{20 / $em}rem;
 	background: white;
 	.left, .right {
 		width: #{290 / $em}rem;;
@@ -42,7 +61,6 @@ html {
 	}
 	@media #{$mobile} {
 		box-sizing: border-box;
-		padding: #{20 / $em}rem;
 		width: 90%;
 		margin: 0 5%;
 		display:-webkit-box;
@@ -63,24 +81,48 @@ html {
 	}
 }
 
-footer {
+.login_footer {
 	width: #{300 / $em}rem;
 	clear: both;
 	@media #{$mobile} {
-		margin-bottom: #{20 / $em}rem;
+		margin: #{20 / $em}rem 0;
 	}
 }
 
 form {
-	margin: #{10 / $em}rem 0;
+	margin: 1rem 0;
 }
 
 label {
 	display: block;
 	font-weight: bold;
 	margin-top: #{10 / $em}rem;
+	line-height: 2em;
+	color: #000;
 	&:first-child {
 		margin-top: 0;
+	}
+	@extend %mobile_hide;
+	@media #{$mobile} {
+		line-height: 0;
+		margin: 0;
+	}
+	
+}
+
+fieldset {
+	ol {
+		&:last-of-type {
+			margin-bottom: 1rem;
+		}
+		li {
+			&:nth-child(n+2) {
+				margin-top: 1rem;
+				@media #{$mobile} {
+					margin: 0;
+				}
+			}
+		}
 	}
 }
 
@@ -91,29 +133,44 @@ input[type=email], input[type=password] {
 	width: 100%;
 	padding: 0 #{5 / $em}em;
 	box-sizing: border-box; 
-	@include border-radius(#{5 / $em}em, #{5 / $em}em);
-	&:last-of-type {
-		margin-bottom: 1em;
+	@include border-radius(0);
+	
+	&::-webkit-input-placeholder {
+		color: transparent;
 	}
 	@media #{$mobile} {
 		width: 100%;
 		height: 2em;
+		-webkit-appearance: none;
+		&::-webkit-input-placeholder {
+			color: gray;
+		}
+	}
+	@media #{$tablet} {
+		-webkit-appearance: none;
+	}
+}
+
+input[type=password] {
+	@media #{$mobile} {
+		border-top: 0;
 	}
 }
 
 
 button {
+	font-family: arial;
 	border: 1px solid gray;
-	font-size: 1.3em;
+	font-size: 1.3rem;
+	background-color: #3cda07;
 	background: -webkit-linear-gradient(top, #3cda07 0%,#299505 100%);
 	border: 1px solid #299505;
 	@include border-radius(#{5 / $em}rem, #{5 / $em}rem);
 	color: white;
-	font-weight: bold;
 	padding: 0 #{10 / $em}em;
 	line-height: 2em;
+	margin: 0;
 	@include single-text-shadow(gray, 0, #{2 / $em}rem, #{10 / $em}rem);
-	margin-bottom: 0.5rem;
 	
 	@media #{$mobile} {
 		width: 100%;

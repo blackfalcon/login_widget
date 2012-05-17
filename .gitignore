@@ -3,5 +3,5 @@ public-min
 *.log
 .DS_Store
 .sass-cache
-public/fonts/
-public/stylesheets/
+public/stylesheets
+public/fonts
