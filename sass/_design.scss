@@ -52,6 +52,14 @@ html {
 	}
 }
 
+footer {
+	width: 100%;
+	clear: both;
+	@media #{$mobile} {
+		margin-bottom: #{20 / $em}em;
+	}
+}
+
 form {
 	margin: #{10 / $em}em 0;
 }
@@ -94,6 +102,7 @@ button {
 	padding: 0 #{10 / $em}em;
 	line-height: 2em;
 	@include single-text-shadow(gray, 0, 2px, 10px);
+	margin-bottom: 0.5em;
 	
 	@media #{$mobile} {
 		width: 100%;
