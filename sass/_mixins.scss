@@ -1,2 +1,23 @@
 $font-size: 12;
 $em: $font-size;
+
+@mixin clearfix () {
+	zoom: 1;
+	&:before {
+		content: "\0020";
+		display: block;
+		height: 0;
+		overflow: hidden;
+	}
+	&:after {
+		content: "\0020";
+		display: block;
+		height: 0;
+		overflow: hidden;
+		clear: both;
+	}
+}
+
+%clearfix {
+	@include clearfix;
+}

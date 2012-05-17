@@ -1,0 +1,110 @@
+html {
+	background: transparentize(orange, 0.2);
+	//-webkit-transition:All 1s ease;
+	@media #{$mobile} {
+		background: transparentize(blue, 0.2);
+	}
+}
+
+.login_container {
+	//-webkit-transition:All 1s ease;
+	@extend %clearfix;
+	width: #{620 / $em}em;
+	margin: #{100 / $em}em auto 0 auto;
+	border: 10px solid black;
+	@include border-radius(8px);
+	@include box-shadow(0 0 30px transparentize(black, 0.2));
+	padding: #{20 / $em}em;
+	background: white;
+	@media #{$mobile} {
+		box-sizing: border-box;
+		width: 90%;
+		margin: 5%;
+		@include box-shadow(0 0 0 transparentize(black, 0));
+		border: 0;
+		display:-webkit-box;
+		-webkit-box-orient:vertical;
+	}
+	.left, .right {
+		width: 300px;
+		margin-right: 10px;
+		float: left;
+		@extend %clearfix;
+	}
+	.right {
+		margin-left: 10px;
+		margin-right: 0;
+		float: left;
+	}
+	@media #{$mobile} {
+		.left, .right {
+			float: none;
+			width: auto;
+			margin-left: 0;
+			margin-right: 0;
+		}
+		.right {
+			@include box_ordinal_group(2);
+		}
+		.left {
+			@include box_ordinal_group(1);
+		}
+	}
+}
+
+form {
+	margin: #{10 / $em}em 0;
+}
+
+label {
+	display: block;
+	font-weight: bold;
+	margin-top: #{10 / $em}em;
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+input[type=email], input[type=password] {
+	border: 1px solid gray;
+	font-size: #{18 / $em}em;
+	height: 2em;
+	width: 100%;
+	padding: 0 #{5 / $em}em;
+	box-sizing: border-box; 
+	@include border-radius(#{5 / $em}em, #{5 / $em}em);
+	&:last-of-type {
+		margin-bottom: 1em;
+	}
+	@media #{$mobile} {
+		width: 100%;
+		height: 2em;
+	}
+}
+
+
+button {
+	border: 1px solid gray;
+	font-size: 1.5em;
+	background: -webkit-linear-gradient(top, #3cda07 0%,#299505 100%);
+	border: 1px solid #299505;
+	@include border-radius(#{5 / $em}em, #{5 / $em}em);
+	color: white;
+	font-weight: bold;
+	padding: 0 #{10 / $em}em;
+	line-height: 2em;
+	@include single-text-shadow(gray, 0, 2px, 10px);
+	
+	@media #{$mobile} {
+		width: 100%;
+	}
+}
+
+
+
+
+
+
+
+
+
