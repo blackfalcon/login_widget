@@ -21,3 +21,11 @@ $em: $font-size;
 %clearfix {
 	@include clearfix;
 }
+
+
+%mobile_hide {
+	@media #{$mobile} {
+		display: none;
+		visibility: hidden;
+	}
+}

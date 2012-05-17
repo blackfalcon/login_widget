@@ -1,41 +1,53 @@
 html {
-	background: transparentize(orange, 0.2);
-	//-webkit-transition:All 1s ease;
+	background: #313131;
 	@media #{$mobile} {
-		background: transparentize(blue, 0.2);
+		background: white;
 	}
 }
 
+.main_body {
+	background: white;
+	@extend %clearfix;
+}
+
+.site_header {
+	width: 100%;
+	height: 6rem;
+	color: white;
+	@extend %clearfix;
+	@extend %mobile_hide;
+}
+
+.site_footer {
+	color: white;
+	@extend %clearfix;
+	@extend %mobile_hide;
+}
+
 .login_container {
-	//-webkit-transition:All 1s ease;
 	@extend %clearfix;
 	width: #{620 / $em}rem;
-	margin: #{100 / $em}rem auto 0 auto;
-	border: #{10 / $em}rem solid black;
-	@include border-radius(#{8 / $em}rem);
-	@include box-shadow(0 0 #{30 / $em}rem transparentize(black, 0.2));
-	padding: #{20 / $em}rem;
+	margin: 0 auto;
+	padding: #{100 / $em}rem #{20 / $em}rem;
 	background: white;
-	@media #{$mobile} {
-		box-sizing: border-box;
-		width: 90%;
-		margin: 5%;
-		@include box-shadow(0 0 0 transparentize(black, 0));
-		border: 0;
-		display:-webkit-box;
-		-webkit-box-orient:vertical;
-	}
 	.left, .right {
-		width: #{300 / $em}rem;;
-		margin-right: #{10 / $em}rem;;
+		width: #{290 / $em}rem;;
+		margin-right: #{20 / $em}rem;;
 		float: left;
 		@extend %clearfix;
 	}
 	.right {
-		margin-left: #{10 / $em}rem;;
+		margin-left: #{20 / $em}rem;;
 		margin-right: 0;
 	}
 	@media #{$mobile} {
+		box-sizing: border-box;
+		padding: #{20 / $em}rem;
+		width: 90%;
+		margin: 0 5%;
+		display:-webkit-box;
+		-webkit-box-orient:vertical;
+
 		.left, .right {
 			float: none;
 			width: auto;
@@ -52,7 +64,7 @@ html {
 }
 
 footer {
-	width: 100%;
+	width: #{300 / $em}rem;
 	clear: both;
 	@media #{$mobile} {
 		margin-bottom: #{20 / $em}rem;
@@ -92,13 +104,13 @@ input[type=email], input[type=password] {
 
 button {
 	border: 1px solid gray;
-	font-size: 1.5em;
+	font-size: 1.3em;
 	background: -webkit-linear-gradient(top, #3cda07 0%,#299505 100%);
 	border: 1px solid #299505;
 	@include border-radius(#{5 / $em}rem, #{5 / $em}rem);
 	color: white;
 	font-weight: bold;
-	padding: 0 #{10 / $em}rem;
+	padding: 0 #{10 / $em}em;
 	line-height: 2em;
 	@include single-text-shadow(gray, 0, #{2 / $em}rem, #{10 / $em}rem);
 	margin-bottom: 0.5rem;
