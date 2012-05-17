@@ -9,13 +9,13 @@ body {
 }
 
 h1 {
-	font-size: #{36 / $em}em;
+	font-size: #{36 / $em}rem;
 	line-height: 1.5em;
 }
 
 h2 {
 	@extend h1;
 	@media #{$mobile} {
-		font-size: #{24 / $em}em;
+		font-size: #{24 / $em}rem;
 	}
 }
