@@ -1,5 +1,6 @@
 // expermintal media query support
 // -----------------------------------------------------
+$tablet:	"screen and (max-width: 64em)";
 $tablet_portrait:	"screen and (max-width: 50em) and (orientation : portrait)";
 $tablet_landscape:	"screen and (max-width: 50em) and (orientation : landscape)";
 

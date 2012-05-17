@@ -1,7 +1,12 @@
+@import "Lubalin"; 
+
+$webfont_alpha:		#{'ITC Lubalin Graph', Arial, sans-serif};
+
 html {
 	font-family: Arial;
 	font-size: 0.75em;
 	-webkit-text-size-adjust: none; /* Prevent font scaling in landscape */
+	color: #333;
 }
 
 body {
@@ -9,13 +14,20 @@ body {
 }
 
 h1 {
-	font-size: #{30 / $em}rem;
+	font-size: #{20 / $em}rem;
 	line-height: 1.5em;
+	margin-bottom: 1rem;
+	font-family: $webfont_alpha;
+	color: #000;
 }
 
 h2 {
 	@extend h1;
-	@media #{$mobile} {
-		font-size: #{24 / $em}rem;
+}
+
+p {
+	margin-bottom: 1em;
+	&:last-of-type {
+		margin: 0;
 	}
 }
