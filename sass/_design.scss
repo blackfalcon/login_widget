@@ -7,11 +7,9 @@ html {
 }
 
 .site_header {
-	//width: #{620 / $em}rem;
 	width: 100%;
 	margin: 0 auto #{20 / $em}rem auto;
 	@extend %clearfix;
-	//@extend %mobile_hide;
 	border-bottom: 1px solid #cccccc;
 	@media #{$mobile} {
 		width: 100%;
@@ -50,7 +48,6 @@ html {
 	@extend %clearfix;
 	width: #{620 / $em}rem;
 	margin: 0 auto;
-	//padding: #{20 / $em}rem #{20 / $em}rem;
 	background: white;
 	.left, .right {
 		width: #{290 / $em}rem;;
@@ -64,7 +61,6 @@ html {
 	}
 	@media #{$mobile} {
 		box-sizing: border-box;
-		//padding: #{20 / $em}rem;
 		width: 90%;
 		margin: 0 5%;
 		display:-webkit-box;
@@ -119,6 +115,14 @@ fieldset {
 		&:last-of-type {
 			margin-bottom: 1rem;
 		}
+		li {
+			&:nth-child(n+2) {
+				margin-top: 1rem;
+				@media #{$mobile} {
+					margin: 0;
+				}
+			}
+		}
 	}
 }
 
@@ -155,6 +159,7 @@ input[type=password] {
 
 
 button {
+	font-family: arial;
 	border: 1px solid gray;
 	font-size: 1.3rem;
 	background-color: #3cda07;
@@ -162,7 +167,6 @@ button {
 	border: 1px solid #299505;
 	@include border-radius(#{5 / $em}rem, #{5 / $em}rem);
 	color: white;
-	font-weight: bold;
 	padding: 0 #{10 / $em}em;
 	line-height: 2em;
 	margin: 0;

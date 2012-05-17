@@ -6,6 +6,7 @@ html {
 	font-family: Arial;
 	font-size: 0.75em;
 	-webkit-text-size-adjust: none; /* Prevent font scaling in landscape */
+	-webkit-font-smoothing: antialiased;
 	color: #333;
 }
 
@@ -29,5 +30,13 @@ p {
 	margin-bottom: 1em;
 	&:last-of-type {
 		margin: 0;
+	}
+}
+
+a {
+	color: #0073f8;
+	text-decoration: none;
+	&:hover, &:active {
+		text-decoration: underline;
 	}
 }
