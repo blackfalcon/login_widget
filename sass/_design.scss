@@ -19,13 +19,25 @@ html {
 .site_logo {
 	width: #{620 / $em}rem;
 	margin: 0 auto;
-	background-image: $gi_logo_med_black;
-	background-repeat: no-repeat;
-	background-position: 0 50%;
+	//background-image: $gi_logo_med_black;
+	//background-repeat: no-repeat;
+	//background-position: 0 50%;
 	height: 7rem;
+	font-size: 17rem;
+	line-height: 0.2em;
+	font-family: $getty_icofont;
+	span {
+		@extend %hide_text;
+	}
 	@media #{$mobile} {
-		background-position: 50% 50%;
+		text-align: center;
 		width: 100%;
+	}
+	a {
+		color: #000;
+		&:hover, &:active {
+			text-decoration: none;
+		}
 	}
 }
 
@@ -128,12 +140,13 @@ fieldset {
 
 input[type=email], input[type=password] {
 	border: 1px solid gray;
+	font-family: arial;
 	font-size: #{18 / $em}em;
 	height: 2em;
 	width: 100%;
 	padding: 0 #{5 / $em}em;
 	box-sizing: border-box; 
-	@include border-radius(0);
+	@include border-radius(0);  // by default iOS rounds form field corners
 	
 	&::-webkit-input-placeholder {
 		color: transparent;
@@ -141,9 +154,12 @@ input[type=email], input[type=password] {
 	@media #{$mobile} {
 		width: 100%;
 		height: 2em;
-		-webkit-appearance: none;
+		-webkit-appearance: none;  // this is to remove the default inner shadow
 		&::-webkit-input-placeholder {
-			color: gray;
+			color: #ccc;
+			//font-weight: normal !important;
+			//font-family: arial !important;
+			//font-size: 1rem;
 		}
 	}
 	@media #{$tablet} {
@@ -167,8 +183,8 @@ button {
 	border: 1px solid #299505;
 	@include border-radius(#{5 / $em}rem, #{5 / $em}rem);
 	color: white;
-	padding: 0 #{10 / $em}em;
-	line-height: 2em;
+	padding: 0.5em #{10 / $em}em;
+	min-height: 2em;
 	margin: 0;
 	@include single-text-shadow(gray, 0, #{2 / $em}rem, #{10 / $em}rem);
 	
